@@ -1,0 +1,12 @@
+Container speed comparison
+
+While trying to find which one was faster with 3000+ numbers by using 2 container data structures, I used Deque and vector. I already knew that there were key-value operations in the map, which meant that it would be a waste of time. I also wanted to compare Deque and vector because while deque can add and remove double-sided elements, vector is also quite fast.
+
+For small numbers (1–100) deque was faster, and for numbers 3000+ deque was much faster than vector. If we calculate it in microseconds, Vector calculated 3000 random numbers in 1814 microseconds, while Deque managed to calculate it in 655 microseconds. MergeSort was used as the algorithm.
+
+Merge sort is a sorting algorithm and uses the “divide and conquer” method. Here is the working logic of merge sort:
+
+Divide Step: In the first step, we divide the array to be sorted into two. We repeat this process until the array is divided into equal parts.
+Conquer Step: We recursively call merge sort to sort the split arrays. We return when the size of the split arrays reaches 1, meaning they can no longer be split.
+Merge Step: We create a sequential array by merging the split arrays. When two small sorted arrays are merged, we perform the concatenation from largest to smallest by comparing the elements.
+Merge sort is a stable sorting algorithm as it splits the array into two in each split step and then merges the sorted subarrays in the merge step. Also, it has O(n log n) time complexity even in the worst case.

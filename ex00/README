@@ -1,0 +1,34 @@
+###BitcoinExchange
+BitcoinExchange is a command-line tool that reads a file containing Bitcoin exchange rates and calculates the exchange rate for each date based on a pre-defined internal database of exchange rates.
+
+##Usage
+To use BitcoinExchange, run the executable with the input file as the first argument:
+
+The input file should contain one exchange rate per line, with the date and rate separated by a '|' character. The date should be in the format "YYYY-MM-DD", and the rate should be a positive or negative decimal number with up to 2 decimal places.
+
+##Building
+To build BitcoinExchange, you will need a C++ compiler that supports the C++98 standard. You can build the executable by running the following commands:
+
+This will create an executable named BitcoinExchange in the build directory.
+
+##Implementation
+The BitcoinExchange class is implemented in the BitcoinExchange.cpp file. It contains the following public methods:
+
+read(const std::string& filename): reads the exchange rates from the input file and stores them in the internal database.
+getRateFromDataBase(const std::string& date): returns the exchange rate for the specified date from the internal database.
+isDateInCorrectFormat(const std::string& date): checks if the date string is in the correct format ("YYYY-MM-DD").
+isValidDate(const std::string& date): checks if the date string is a valid date.
+isRateInCorrectFormat(const std::string& rate): checks if the rate string is in the correct format (a positive or negative decimal number with up to 2 decimal places).
+The readInternalDataBase method is a private method that reads the exchange rates from the internal database file and stores them in the dataBase map.
+
+##Error Handling
+BitcoinExchange performs basic error handling to ensure that the input file and internal database file can be opened, and that the input file contains valid exchange rates. If an error occurs, an error message is printed to std::cerr and the program continues to process the remaining lines in the input file.
+
+##Limitations
+BitcoinExchange has the following limitations:
+
+It only supports exchange rates for dates that are present in the internal database.
+It assumes that the input file contains exchange rates in the correct format.
+It does not perform any currency conversion, and assumes that all exchange rates are in Bitcoin.
+License
+BitcoinExchange is licensed under the MIT License. See the LICENSE file for details.

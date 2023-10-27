@@ -1,0 +1,58 @@
+Reverse Polish Notation (RPN) Calculator Documentation
+Overview
+The Reverse Polish Notation (RPN) Calculator is a command-line program designed to evaluate mathematical expressions in Reverse Polish Notation (postfix notation). RPN is a notation in which operators follow their operands, eliminating the need for parentheses to specify the order of operations. This project provides a C++ implementation of an RPN calculator that follows specific constraints.
+
+Features
+Supports basic arithmetic operations: addition (+), subtraction (-), multiplication (*), and division (/).
+Processes RPN expressions passed as command-line arguments.
+Uses a stack to efficiently evaluate RPN expressions.
+Provides error handling for various scenarios, such as division by zero and insufficient operands.
+Does not handle brackets or decimal numbers, as specified.
+Code Structure
+The project is organized into three main files:
+
+main.cpp: This file contains the main function and handles command-line arguments. It uses the RPN class to evaluate the RPN expression and displays the result or error messages.
+
+RPN.hpp: This is the header file for the RPN class. The class definition includes the necessary member functions and private data members. The RPN class encapsulates the logic for parsing and evaluating RPN expressions.
+
+RPN.cpp: This file implements the methods of the RPN class. It processes the RPN expression, performs the calculations, and handles various error conditions. The RPN class follows the standard canonical form.
+
+How to Use
+To use the RPN Calculator, follow these steps:
+
+Compile the project using a C++98-compatible compiler. For example, you can use the following command:
+
+c
+Copy code
+g++ -std=c++98 -o RPN main.cpp RPN.cpp
+Run the program with a valid RPN expression as a command-line argument. For example:
+
+arduino
+Copy code
+./RPN "3 4 + 5 *"
+The program will evaluate the expression and display the result, or it will show an error message if any issues are encountered.
+
+The program will return appropriate exit codes to indicate the success or failure of the operation. You can check the exit code to handle errors in scripts or programs that call the RPN Calculator.
+
+Error Handling
+The RPN Calculator provides error messages and return codes to indicate different error scenarios, such as:
+
+Not enough operands for an operator.
+Division by zero.
+Invalid operands.
+Incomplete expressions.
+Example Usage
+Here are some example usages of the RPN Calculator:
+
+Valid RPN expression:
+
+./RPN "3 4 + 5 *"
+Result: 35
+Error handling (division by zero):
+
+./RPN "3 0 /"
+Error: Division by zero
+Error handling (invalid operand):
+
+./RPN "3 x +"
+Error: Invalid operand - x
